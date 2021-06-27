@@ -1,0 +1,10 @@
+{% block sidebar %}
+<div class="brands_list flex-row">
+    {% for logo in logos %}
+        <div class="brands_item">
+            <img src="{{logo.image.url}}" alt="">
+        </div>
+    {% endfor %}
+    
+</div>
+{%endblock sidebar %}

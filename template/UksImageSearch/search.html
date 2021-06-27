@@ -1,0 +1,35 @@
+{% extends 'UksImageSearch/base.html' %}
+{% block sidebar %}
+<div class="result_search">
+    <div class="corusel">
+        {% for prod in object_list %}
+        <div class="sl">
+            <div class="img_box">
+                <img src="{{prod.img_link}}" alt="">
+            </div>
+            <div class="info_box">
+                <h2 class="article">Артикул: <span class='article-code'>{{prod.article}}</span></h2>
+                <h2 class="color">Колір: <span class="color-code">{{prod.color_code}}</span></h2>
+                <h2 class="color">Скорочений артикул: <span class="color-code">{{prod.product_code}}</span></h2>
+            </div>
+    
+        </div>
+        {% endfor %}
+    </div>
+    
+    <div class="more_color flex-start">  
+        {% for product in object_list %}
+            <div class="more_color_item">
+                <div class="more_color_img">
+                    <img src="{{product.img_link}}" alt="">
+                </div>
+                <div class="more_color_text">
+                    <p class="pp">{{product.color_code}}</p>
+                </div>
+            </div>
+        {% endfor %}
+        
+    </div>
+    
+</div>
+{% endblock sidebar %}
